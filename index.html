@@ -64,10 +64,14 @@
 
     .splash-fallback {
       position: absolute;
-      display: grid;
+      display: none;
       place-items: center;
       gap: 18px;
       text-align: center;
+    }
+
+    .splash.show-fallback .splash-fallback {
+      display: grid;
     }
 
     .splash.has-lottie .splash-fallback {
@@ -429,6 +433,11 @@
       splash.classList.add("hidden");
       document.body.classList.remove("loading");
     };
+    const fallbackTimer = setTimeout(() => {
+      if (!splash.classList.contains("has-lottie")) {
+        splash.classList.add("show-fallback");
+      }
+    }, 650);
 
     if (window.lottie) {
       const animation = window.lottie.loadAnimation({
@@ -438,7 +447,11 @@
         autoplay: true,
         path: "FullMind_Splash_Lottie.json"
       });
-      animation.addEventListener("data_ready", () => splash.classList.add("has-lottie"));
+      animation.addEventListener("data_ready", () => {
+        clearTimeout(fallbackTimer);
+        splash.classList.add("has-lottie");
+        splash.classList.remove("show-fallback");
+      });
       animation.addEventListener("data_failed", () => splash.classList.remove("has-lottie"));
       animation.addEventListener("complete", finishSplash);
       setTimeout(finishSplash, 5200);
