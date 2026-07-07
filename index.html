@@ -3,17 +3,22 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>FullMind: Sleep &amp; Meditation Terms of Service</title>
+  <title>FullMind Terms of Service</title>
   <style>
     :root {
-      --bg: #070b09;
-      --panel: rgba(15, 24, 20, 0.94);
-      --text: #edf6f1;
-      --muted: #a9bbb2;
-      --soft: #d8e3dd;
+      --bg: #040706;
+      --bg-soft: #09100d;
+      --panel: rgba(14, 19, 17, 0.92);
+      --panel-strong: rgba(11, 15, 13, 0.97);
+      --card: rgba(255, 255, 255, 0.055);
+      --text: #eef7f2;
+      --muted: #98aaa2;
+      --soft: #dbe6e0;
       --accent: #00ff88;
-      --border: rgba(255, 255, 255, 0.1);
-      --shadow: 0 28px 90px rgba(0, 0, 0, 0.34);
+      --accent-soft: rgba(0, 255, 136, 0.14);
+      --border: rgba(255, 255, 255, 0.08);
+      --shadow: 0 28px 90px rgba(0, 0, 0, 0.36);
+      --radius: 28px;
     }
 
     * {
@@ -27,12 +32,13 @@
     body {
       margin: 0;
       min-height: 100vh;
-      font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+      font-family: "SF Pro Display", "SF Pro Text", "Segoe UI", "Helvetica Neue", Arial, sans-serif;
       color: var(--text);
       background:
-        radial-gradient(circle at top left, rgba(0, 255, 136, 0.14), transparent 34%),
-        linear-gradient(180deg, #08100c 0%, var(--bg) 100%);
-      line-height: 1.65;
+        radial-gradient(circle at top left, rgba(0, 255, 136, 0.14), transparent 28%),
+        radial-gradient(circle at top right, rgba(83, 167, 255, 0.08), transparent 20%),
+        linear-gradient(180deg, #07100c 0%, var(--bg) 100%);
+      line-height: 1.68;
     }
 
     body.loading {
@@ -46,7 +52,7 @@
       display: grid;
       place-items: center;
       min-height: 100vh;
-      background: radial-gradient(circle at center, #0d241c 0%, #050806 70%);
+      background: radial-gradient(circle at center, #0d241c 0%, #040706 72%);
       transition: opacity 520ms ease, visibility 520ms ease;
     }
 
@@ -127,8 +133,8 @@
     }
 
     .wrap {
-      width: min(980px, calc(100% - 32px));
-      margin: 42px auto 64px;
+      width: min(1080px, calc(100% - 32px));
+      margin: 40px auto 72px;
     }
 
     .hero,
@@ -136,14 +142,17 @@
     section {
       border: 1px solid var(--border);
       background: var(--panel);
-      border-radius: 24px;
+      border-radius: var(--radius);
       box-shadow: var(--shadow);
-      backdrop-filter: blur(10px);
+      backdrop-filter: blur(12px);
     }
 
     .hero {
-      padding: 30px;
+      padding: 32px;
       margin-bottom: 18px;
+      background:
+        radial-gradient(circle at top right, rgba(0, 255, 136, 0.08), transparent 28%),
+        linear-gradient(180deg, rgba(16, 26, 22, 0.96), rgba(11, 16, 14, 0.96));
     }
 
     .eyebrow {
@@ -152,7 +161,7 @@
       gap: 8px;
       padding: 8px 13px;
       border-radius: 999px;
-      background: rgba(0, 255, 136, 0.12);
+      background: var(--accent-soft);
       color: var(--accent);
       font-size: 13px;
       font-weight: 700;
@@ -170,15 +179,17 @@
     }
 
     h1 {
-      margin: 18px 0 8px;
-      font-size: clamp(30px, 4vw, 46px);
-      line-height: 1.08;
+      margin: 18px 0 10px;
+      font-size: clamp(34px, 4.8vw, 56px);
+      line-height: 1.03;
+      font-weight: 800;
+      letter-spacing: -0.03em;
     }
 
     h2 {
-      margin: 0 0 12px;
+      margin: 0;
       color: #ffffff;
-      font-size: 20px;
+      font-size: 22px;
       line-height: 1.25;
     }
 
@@ -189,11 +200,12 @@
     }
 
     p {
-      margin: 0 0 10px;
+      margin: 0 0 11px;
     }
 
     .meta,
-    .note {
+    .note,
+    .url-copy {
       color: var(--muted);
       font-size: 14px;
     }
@@ -203,8 +215,66 @@
       margin-top: 14px;
     }
 
-    .index {
+    .hero-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.7fr) minmax(280px, 0.9fr);
+      gap: 18px;
+      align-items: end;
+      margin-top: 24px;
+    }
+
+    .hero-card {
       padding: 20px;
+      border-radius: 22px;
+      background: var(--card);
+      border: 1px solid rgba(255, 255, 255, 0.07);
+    }
+
+    .hero-card h3 {
+      margin: 0 0 10px;
+      font-size: 15px;
+      color: #ffffff;
+      letter-spacing: 0.01em;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 14px;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      min-height: 48px;
+      padding: 0 18px;
+      border-radius: 16px;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      text-decoration: none;
+      font-weight: 700;
+      transition: transform 160ms ease, border-color 160ms ease, background 160ms ease;
+    }
+
+    .button:hover {
+      transform: translateY(-1px);
+      border-color: rgba(255, 255, 255, 0.18);
+    }
+
+    .button-primary {
+      color: #04100b;
+      background: var(--accent);
+    }
+
+    .button-secondary {
+      color: var(--text);
+      background: rgba(255, 255, 255, 0.06);
+    }
+
+    .index {
+      padding: 22px;
       margin: 18px 0;
     }
 
@@ -212,13 +282,13 @@
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
       gap: 10px;
-      margin-top: 12px;
+      margin-top: 14px;
     }
 
     .index a {
       display: block;
-      padding: 11px 12px;
-      border-radius: 14px;
+      padding: 12px 13px;
+      border-radius: 16px;
       color: var(--text);
       text-decoration: none;
       background: rgba(255, 255, 255, 0.055);
@@ -226,26 +296,27 @@
     }
 
     .index a:hover {
-      border-color: rgba(0, 255, 136, 0.5);
+      border-color: rgba(0, 255, 136, 0.44);
       color: var(--accent);
     }
 
     section {
-      padding: 22px;
+      padding: 24px;
       margin: 14px 0;
+      background: var(--panel-strong);
     }
 
     .section-title {
       display: flex;
       align-items: center;
-      gap: 10px;
-      margin-bottom: 8px;
+      gap: 12px;
+      margin-bottom: 12px;
     }
 
     .mark {
-      width: 26px;
-      height: 26px;
-      border-radius: 10px;
+      width: 28px;
+      height: 28px;
+      border-radius: 11px;
       background: rgba(0, 255, 136, 0.13);
       border: 1px solid rgba(0, 255, 136, 0.22);
       position: relative;
@@ -258,43 +329,47 @@
       inset: 8px;
       border-radius: 999px;
       background: var(--accent);
+      box-shadow: 0 0 18px rgba(0, 255, 136, 0.55);
     }
 
     ul {
       margin: 0;
-      padding-left: 20px;
+      padding-left: 18px;
     }
 
-    li {
-      margin-bottom: 8px;
+    li + li {
+      margin-top: 8px;
     }
 
     footer {
-      margin-top: 24px;
+      padding: 18px 6px 0;
       color: var(--muted);
-      font-size: 14px;
       text-align: center;
+      font-size: 13px;
     }
 
-    @media (max-width: 700px) {
+    @media (max-width: 840px) {
+      .hero-grid,
+      .index-grid {
+        grid-template-columns: 1fr;
+      }
+
       .wrap {
-        width: min(100% - 20px, 980px);
-        margin: 20px auto 42px;
+        width: min(100%, calc(100% - 20px));
+        margin-top: 22px;
       }
 
       .hero,
       .index,
       section {
-        border-radius: 18px;
+        border-radius: 22px;
       }
 
       .hero,
+      .index,
       section {
-        padding: 20px;
-      }
-
-      .index-grid {
-        grid-template-columns: 1fr;
+        padding-left: 18px;
+        padding-right: 18px;
       }
     }
   </style>
@@ -314,114 +389,131 @@
   <main class="wrap">
     <header class="hero">
       <span class="eyebrow">PandaZen</span>
-      <h1>FullMind: Sleep &amp; Meditation Terms of Service</h1>
-      <p class="meta">Effective date: May 8, 2026</p>
-      <p class="note">A clear guide to using the app, premium features, creator tools, community features, Bluetooth devices, and service rules.</p>
+      <h1>FullMind Terms of Service</h1>
+      <p class="meta">Effective date: July 8, 2026</p>
+      <p class="note">This page is intended to match the current Apple-app legal surface for FullMind on iPhone, iPad, and compatible Mac installs that run the iPad version.</p>
+
+      <div class="hero-grid">
+        <div class="hero-card">
+          <h3>What these terms cover</h3>
+          <p>These terms govern how you use FullMind, including meditation playback, Premium access, shared community content, creator-interest tools, and related Apple-platform experiences.</p>
+        </div>
+
+        <div class="hero-card">
+          <h3>Canonical hosted URL</h3>
+          <p class="url-copy">https://fullmind.app/terms</p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="https://fullmind.app/terms">Open canonical path</a>
+            <a class="button button-secondary" href="../git-privacy-policy/">View Privacy Policy</a>
+          </div>
+        </div>
+      </div>
     </header>
 
     <nav class="index" aria-label="Terms of service index">
       <h2>Index</h2>
       <div class="index-grid">
         <a href="#acceptance">Acceptance</a>
-        <a href="#wellness">Wellness Use</a>
+        <a href="#wellness">Wellness Disclaimer</a>
         <a href="#accounts">Accounts and Access</a>
-        <a href="#premium">Premium and Billing</a>
-        <a href="#creator">Creator Content</a>
-        <a href="#community">Community Features</a>
-        <a href="#bluetooth">Bluetooth Devices</a>
-        <a href="#acceptable-use">Acceptable Use</a>
+        <a href="#premium">Premium, Trials, and Billing</a>
+        <a href="#community">Community Content</a>
+        <a href="#use">Acceptable Use</a>
+        <a href="#availability">Availability and Changes</a>
+        <a href="#ownership">Intellectual Property</a>
+        <a href="#termination">Termination</a>
+        <a href="#liability">Disclaimers and Liability</a>
         <a href="#privacy">Privacy</a>
-        <a href="#availability">Changes and Availability</a>
-        <a href="#ownership">Ownership and Limits</a>
-        <a href="#contact">Termination and Contact</a>
+        <a href="#contact">Contact</a>
       </div>
     </nav>
 
     <section id="acceptance">
       <div class="section-title"><span class="mark"></span><h2>Acceptance</h2></div>
-      <p>By using FullMind: Sleep &amp; Meditation, you agree to these Terms. If you do not agree, please do not use the app.</p>
-      <p>You may use the app only if you are legally allowed to enter into this agreement.</p>
+      <p>By using FullMind on Apple platforms, you agree to these Terms of Service. If you do not agree, do not use the app.</p>
+      <p>You may use FullMind only if you are legally allowed to enter into this agreement.</p>
     </section>
 
     <section id="wellness">
-      <div class="section-title"><span class="mark"></span><h2>Wellness Use</h2></div>
-      <p>FullMind: Sleep &amp; Meditation offers meditation, sleep, relaxation, soundscape, visual, creator, and community features for wellness and entertainment.</p>
-      <p>The app is not medical care, therapy, diagnosis, crisis support, or emergency help. If you need medical or emergency support, contact a qualified professional or emergency service.</p>
+      <div class="section-title"><span class="mark"></span><h2>Wellness Disclaimer</h2></div>
+      <p>FullMind is a meditation, ambience, relaxation, sleep, and creator-discovery experience. It is not medical care, therapy, diagnosis, crisis support, or emergency assistance.</p>
+      <p>If you need medical, mental-health, or emergency support, contact a qualified professional or emergency service.</p>
     </section>
 
     <section id="accounts">
       <div class="section-title"><span class="mark"></span><h2>Accounts and Access</h2></div>
+      <p>Some features require signing in with Apple or Google. You are responsible for maintaining the security of your device and any account you use with FullMind.</p>
       <ul>
-        <li>Some features may require Google sign-in or an app profile.</li>
-        <li>You are responsible for keeping your account and device secure.</li>
-        <li>We may limit or remove access if an account is used in a way that harms users, creators, the app, or our services.</li>
+        <li>We may limit or remove access if an account is used in a way that harms users, creators, services, or platform integrity.</li>
+        <li>You are responsible for information submitted through your account or device.</li>
       </ul>
     </section>
 
     <section id="premium">
-      <div class="section-title"><span class="mark"></span><h2>Premium and Billing</h2></div>
+      <div class="section-title"><span class="mark"></span><h2>Premium, Trials, and Billing</h2></div>
+      <p>On Apple platforms, subscriptions, renewals, cancellation handling, and payment processing are managed by Apple through the App Store and its purchase terms.</p>
+      <p>Premium access depends on valid entitlement state, trial state, or both. If entitlement verification fails, Premium features may pause until access is restored.</p>
       <ul>
-        <li>Paid plans, free trials, renewals, cancellations, and refunds are handled through Google Play Billing and the rules shown at purchase time.</li>
-        <li>Premium access depends on active billing status.</li>
-        <li>If billing cannot be verified, premium features may pause until access is restored.</li>
-      </ul>
-    </section>
-
-    <section id="creator">
-      <div class="section-title"><span class="mark"></span><h2>Creator Content</h2></div>
-      <ul>
-        <li>If you create, upload, publish, or share scenes, voices, names, tags, images, descriptions, or links, you are responsible for that content.</li>
-        <li>You confirm that you have the rights needed to share it and that it does not violate another person's rights.</li>
-        <li>By submitting content, you allow FullMind: Sleep &amp; Meditation and PandaZen to host, store, display, distribute, operate, and improve that content as needed for app features.</li>
+        <li>Free trials, legacy trial states, and Premium access may change as the product evolves.</li>
+        <li>Deleting your FullMind account does not automatically cancel an App Store subscription.</li>
       </ul>
     </section>
 
     <section id="community">
-      <div class="section-title"><span class="mark"></span><h2>Community Features</h2></div>
-      <p>Community, creator, referral, promotional, and partner-related tools must be used honestly and only for their intended purpose.</p>
-      <p>We may review, hide, remove, limit, or suspend content or access if we detect misuse, spam, manipulation, unsafe content, infringement, fraud, or operational risk.</p>
-    </section>
-
-    <section id="bluetooth">
-      <div class="section-title"><span class="mark"></span><h2>Bluetooth Devices</h2></div>
-      <p>Supported PandaZen device features are optional. You are responsible for using connected devices safely and following any hardware instructions.</p>
-      <p>Bluetooth availability may vary by device, operating system, permission status, and nearby conditions.</p>
-    </section>
-
-    <section id="acceptable-use">
-      <div class="section-title"><span class="mark"></span><h2>Acceptable Use</h2></div>
+      <div class="section-title"><span class="mark"></span><h2>Community Content and Submissions</h2></div>
+      <p>If you create, submit, publish, or share scenes, voices, names, descriptions, tags, issue reports, or feature requests, you remain responsible for that content.</p>
       <ul>
-        <li>Do not use the app to break the law, harm others, upload content you do not have rights to, interfere with app security, scrape or copy the service, or abuse creator, rating, billing, referral, or promotional systems.</li>
-        <li>Do not try to reverse engineer, disrupt, overload, or bypass protections in the app or related services except where the law clearly allows it.</li>
+        <li>You must have the rights needed to share any content you submit.</li>
+        <li>You must not submit content that infringes rights, contains sensitive personal information, is deceptive, abusive, illegal, or unsafe.</li>
+        <li>By submitting community-facing content, you allow FullMind to host, store, display, moderate, rank, and operate that content as needed for product features.</li>
       </ul>
+    </section>
+
+    <section id="use">
+      <div class="section-title"><span class="mark"></span><h2>Acceptable Use</h2></div>
+      <p>You may not misuse FullMind or its services.</p>
+      <ul>
+        <li>Do not spoof purchases, manipulate counters, abuse ad flows, scrape the service, reverse engineer protected systems, or interfere with normal app operation.</li>
+        <li>Do not use the app to harass others, distribute harmful content, or submit material you do not have rights to use.</li>
+        <li>Do not attempt to bypass feature limits, account restrictions, moderation actions, or access controls except where the law clearly allows it.</li>
+      </ul>
+    </section>
+
+    <section id="availability">
+      <div class="section-title"><span class="mark"></span><h2>Availability and Service Changes</h2></div>
+      <p>We may add, remove, pause, update, or redesign features, plans, visuals, integrations, creator tools, pricing, and community systems as FullMind evolves.</p>
+      <p>We do not promise that every feature will always be available, uninterrupted, or error-free.</p>
+    </section>
+
+    <section id="ownership">
+      <div class="section-title"><span class="mark"></span><h2>Intellectual Property</h2></div>
+      <p>FullMind, its branding, design, code, visual presentation, and service materials are protected by intellectual property laws and remain the property of their respective owners except where applicable law says otherwise.</p>
+    </section>
+
+    <section id="termination">
+      <div class="section-title"><span class="mark"></span><h2>Termination and Enforcement</h2></div>
+      <p>We may suspend, restrict, or terminate access if we believe these Terms were violated, the service is at risk, required providers demand action, or the app is being discontinued.</p>
+    </section>
+
+    <section id="liability">
+      <div class="section-title"><span class="mark"></span><h2>Disclaimers and Liability Limits</h2></div>
+      <p>To the fullest extent allowed by law, FullMind is provided on an as-is and as-available basis.</p>
+      <p>To the fullest extent allowed by law, FullMind and its operators are not liable for indirect, incidental, special, consequential, or exemplary damages arising from app use, service interruption, content issues, or access limitations.</p>
     </section>
 
     <section id="privacy">
       <div class="section-title"><span class="mark"></span><h2>Privacy</h2></div>
-      <p>Your use of the app is also governed by the FullMind: Sleep &amp; Meditation Privacy Policy.</p>
-      <p>The Privacy Policy explains what information is used, what stays on your device, and what is used for account, cloud, creator, billing, Bluetooth, and community features.</p>
-    </section>
-
-    <section id="availability">
-      <div class="section-title"><span class="mark"></span><h2>Changes and Availability</h2></div>
-      <p>The app may change over time. We may add, remove, suspend, or update features, pricing, eligibility, integrations, and content when needed.</p>
-      <p>We try to keep the app reliable, but we do not promise that every feature will always be available, uninterrupted, or error-free.</p>
-    </section>
-
-    <section id="ownership">
-      <div class="section-title"><span class="mark"></span><h2>Ownership and Limits</h2></div>
-      <p>FullMind: Sleep &amp; Meditation, its design, branding, software, and service materials are protected by intellectual property laws.</p>
-      <p>To the fullest extent allowed by law, the app is provided as is, and FullMind: Sleep &amp; Meditation and its operators are not responsible for indirect, incidental, special, or consequential damages related to app use.</p>
+      <p>Your use of FullMind is also governed by the Privacy Policy.</p>
+      <p>The Privacy Policy explains how account data, analytics, ad-related signals, community content metadata, and local app state are processed.</p>
     </section>
 
     <section id="contact">
-      <div class="section-title"><span class="mark"></span><h2>Termination and Contact</h2></div>
-      <p>We may suspend or terminate access if we believe these Terms were violated, the service is at risk, or the app is discontinued.</p>
-      <p>For questions about these Terms, use the in-app support or feedback options, including Report an issue or Request | Suggest Feature.</p>
+      <div class="section-title"><span class="mark"></span><h2>Contact</h2></div>
+      <p>For questions about these Terms, use the in-app Report Issue or Suggest Feature paths, or the hosted legal page contact route once published.</p>
     </section>
 
     <footer>
-      FullMind: Sleep &amp; Meditation Terms of Service<br />
+      FullMind Terms of Service<br />
       PandaZen
     </footer>
   </main>
@@ -433,6 +525,7 @@
       splash.classList.add("hidden");
       document.body.classList.remove("loading");
     };
+
     const fallbackTimer = setTimeout(() => {
       if (!splash.classList.contains("has-lottie")) {
         splash.classList.add("show-fallback");
@@ -447,11 +540,13 @@
         autoplay: true,
         path: "FullMind_Splash_Lottie.json"
       });
+
       animation.addEventListener("data_ready", () => {
         clearTimeout(fallbackTimer);
         splash.classList.add("has-lottie");
         splash.classList.remove("show-fallback");
       });
+
       animation.addEventListener("data_failed", () => splash.classList.remove("has-lottie"));
       animation.addEventListener("complete", finishSplash);
       setTimeout(finishSplash, 5200);
